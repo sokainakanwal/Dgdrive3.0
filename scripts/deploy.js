@@ -1,12 +1,12 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Upload = await hre.ethers.getContractFactory("Upload");
-  const upload = await Upload.deploy();
+  const Ballot = await hre.ethers.getContractFactory("Ballot");
+  const ballot = await Ballot.deploy();
 
-  await upload.deployed();
+  await ballot.deployed();
 
-  console.log("Library deployed to:", upload.address);
+  console.log("Library deployed to:", ballot.address);
 }
 
 main().catch((error) => {

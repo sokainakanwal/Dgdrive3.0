@@ -1,4 +1,4 @@
-import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
+import Ballot from "./artifacts/contracts/Ballot.sol/Ballot.json";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import FileUpload from "./components/FileUpload";
@@ -28,11 +28,11 @@ function App() {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
-        let contractAddress = "Your Contract Address Here";
+        let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
         const contract = new ethers.Contract(
           contractAddress,
-          Upload.abi,
+          Ballot.abi,
           signer
         );
         //console.log(contract);
@@ -76,3 +76,7 @@ function App() {
 }
 
 export default App;
+
+
+//npx hardhat node
+//npx hardhat run --network localhost scripts/deploy.js
